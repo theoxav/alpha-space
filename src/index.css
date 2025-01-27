@@ -1,6 +1,6 @@
 @font-face {
-  font-family: cardo;
-  src: url(./assets/fonts/cardo/cardot.otf);
+  font-family: vactory;
+  src: url(./assets/fonts/vactory/VactorySansRegular-drrAV.ttf);
 }
 
 @font-face {
@@ -10,7 +10,7 @@
 
 body {
   font-family:
-    cardo,
+    vactory,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -22,6 +22,10 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+}
+
+:root {
+  --clr-violet: #86198f;
 }
 
 @tailwind base;
@@ -151,5 +155,8 @@ body {
   }
   .align-element {
     @apply mx-auto max-w-6xl px-8;
+  }
+  .section {
+    @apply align-element min-h-[100vh] px-8 py-12;
   }
 }

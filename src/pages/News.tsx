@@ -1,3 +1,4 @@
+import CardsGrid from "@/components/CardsGrid";
 import { snapiCustomFetch } from "@/utils/customFetch";
 import { NewsResponse } from "@/utils/types";
 import { LoaderFunction, useLoaderData } from "react-router-dom";
@@ -24,9 +25,12 @@ export const newsPageLoader: LoaderFunction =
 
 const News = () => {
   const { results } = useLoaderData() as NewsResponse;
-  console.log(results);
 
-  return <div>News</div>;
+  return (
+    <section className="section">
+      <CardsGrid objects={results} mode="news-page" />
+    </section>
+  );
 };
 
 export default News;
