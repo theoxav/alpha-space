@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 const Header = (): ReactNode => {
   return (
-    <header className=" bg-black">
+    <header className="bg-black">
       <div className="grid grid-cols-2 md:grid-cols-3 p-2 align-element">
         <Link to="/" className="justify-self-start self-center">
           <h1 className="mars-font text-lg pt-2 tracking-[0.8rem] text-white">
