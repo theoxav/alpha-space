@@ -1,16 +1,17 @@
-import { Link, links } from '@/utils/links';
-import { NavLink } from 'react-router-dom';
+import { Link, links } from "@/utils/links";
+import { NavLink } from "react-router-dom";
 
 const LinksDesktop = () => {
   return (
-    <div className="hidden w-full lg:flex gap-x-[5rem] justify-center items-center">
+    <div className="w-fulllg:flex hidden items-center justify-center gap-x-[5rem] text-white">
       {links.map((link) => {
         const { ref, label } = link as Link;
         return (
           <NavLink
+            key={label}
             to={ref}
             className={({ isActive }) =>
-              `capitalize tracking-wide ${isActive ? 'underline text-xl' : ''}`
+              `capitalize tracking-wide ${isActive ? "text-xl underline" : ""}`
             }
           >
             {label}
