@@ -135,4 +135,7 @@ body {
   .mars-font {
     font-family: mars;
   }
+  .test {
+    @apply border-solid border-2 border-black;
+  }
 }
