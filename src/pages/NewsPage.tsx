@@ -4,6 +4,7 @@ import { NewsResponse } from "@/utils/types";
 import { LoaderFunction, useLoaderData } from "react-router-dom";
 import Title from "@/components/news/components/Title.tsx";
 import Overview from "@/components/news/components/Overview.tsx";
+import Filters from "@/components/Filters.tsx";
 
 const newsParams = {
   news_site_exclude: "SpacePolicyOnline.com",
@@ -32,6 +33,7 @@ const NewsPage = () => {
   return (
     <section className="section">
       <Title text="All news" />
+      <Filters term="term" mode="news" />
       <Overview objects={data} />
       <CardsGrid objects={results} mode="news-page" />
     </section>
