@@ -1,6 +1,6 @@
 import { News } from "@/utils/types";
 import { ReactNode } from "react";
-import NewsPageCard from "@/components/news/NewsPageCard";
+import NewsCard from "@/components/news/NewsCard.tsx";
 
 const CardsGrid = ({
   objects,
@@ -12,7 +12,7 @@ const CardsGrid = ({
   return (
     <div className="grid auto-rows-[600px] grid-cols-1 gap-y-4 lg:auto-rows-[300px]">
       {objects.map((item, index) => (
-        <NewsPageCard news={item} key={index} />
+        <NewsCard news={item} key={index} />
       ))}
     </div>
   );

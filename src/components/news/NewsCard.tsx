@@ -2,7 +2,7 @@ import { News } from "@/utils/types";
 import { CircleArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const NewsPageCard = ({ news }: { news: News }) => {
+const NewsCard = ({ news }: { news: News }) => {
   const { url, image_url, title, published_at, news_site, summary } = news;
 
   return (
@@ -38,4 +38,4 @@ const NewsPageCard = ({ news }: { news: News }) => {
   );
 };
 
-export default NewsPageCard;
+export default NewsCard;

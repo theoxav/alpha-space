@@ -2,6 +2,8 @@ import CardsGrid from "@/components/CardsGrid";
 import { snapiCustomFetch } from "@/utils/customFetch";
 import { NewsResponse } from "@/utils/types";
 import { LoaderFunction, useLoaderData } from "react-router-dom";
+import Title from "@/components/news/components/Title.tsx";
+import Overview from "@/components/news/components/Overview.tsx";
 
 const newsParams = {
   news_site_exclude: "SpacePolicyOnline.com",
@@ -23,14 +25,17 @@ export const newsPageLoader: LoaderFunction =
     }
   };
 
-const News = () => {
-  const { results } = useLoaderData() as NewsResponse;
+const NewsPage = () => {
+  const data = useLoaderData() as NewsResponse;
+  const { results } = data;
 
   return (
     <section className="section">
+      <Title text="All news" />
+      <Overview objects={data} />
       <CardsGrid objects={results} mode="news-page" />
     </section>
   );
 };
 
-export default News;
+export default NewsPage;

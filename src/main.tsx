@@ -2,11 +2,11 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomeLayout from "@/pages/HomeLayout";
-import Apod from "@/pages/Apod";
-import Hubble from "@/pages/Hubble";
-import Landing from "@/pages/Landing";
-import News, { newsPageLoader } from "@/pages/News";
-import SpaceX from "@/pages/SpaceX";
+import ApodPage from "@/pages/ApodPage.tsx";
+import HubblePage from "@/pages/HubblePage.tsx";
+import LandingPage from "@/pages/LandingPage.tsx";
+import NewsPage, { newsPageLoader } from "@/pages/NewsPage.tsx";
+import SpaceXPage from "@/pages/SpaceXPage.tsx";
 import Webb from "@/pages/Webb";
 
 import "./index.css";
@@ -17,17 +17,17 @@ const router = createBrowserRouter([
     path: "/",
     element: <HomeLayout />,
     children: [
-      { index: true, element: <Landing /> },
+      { index: true, element: <LandingPage /> },
       {
         path: "news",
-        element: <News />,
+        element: <NewsPage />,
         loader: newsPageLoader,
         errorElement: <ErrorElement />,
       },
       { path: "webb", element: <Webb /> },
-      { path: "spacex", element: <SpaceX /> },
-      { path: "apod", element: <Apod /> },
-      { path: "hubble", element: <Hubble /> },
+      { path: "spacex", element: <SpaceXPage /> },
+      { path: "apod", element: <ApodPage /> },
+      { path: "hubble", element: <HubblePage /> },
     ],
   },
 ]);
