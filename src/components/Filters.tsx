@@ -20,10 +20,10 @@ const Filters = ({
         placeHolder="search"
       />
       <div className="gap-2 self-end">
-        <Button type="sumbit" size="lg">
+        <Button type="submit" size="lg">
           Search
         </Button>
-        <Button type="button" variant="outline" size="lg">
+        <Button className="ml-2" type="button" variant="outline" size="lg">
           <Link to="/news">Reset</Link>
         </Button>
       </div>
