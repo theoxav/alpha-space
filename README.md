@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+# Alpha Space
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a `React` application that allows users to search for space-related news and view detailed information about them. It is powered by various modern technologies including `React Router` for routing, `Axios` for API requests, `Tailwind CSS` for styling, `TypeScript` for type safety, and `shadcn` for UI components.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **News Search**: Search for space-related news using a dynamic search input that fetches results from a news API.
+- **Responsive Design**: Utilizes `Tailwind CSS` for a responsive and modern user interface.
+- **News Overview**: Displays an overview of the number of news articles found.
+- **Detailed News Cards**: Shows detailed information about each news article in a card format.
+- **SpaceX Information**: Provides various information about SpaceX and its missions.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the repository**:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/your-repository/alpha-space.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Install dependencies**:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. **Run the development server**:
+
+```bash
+npm run dev
+```
+
+## Technologies Used
+- ![TypeScript](https://img.shields.io/badge/TypeScript-%23007ACC?style=flat&logo=typescript&logoColor=white)
+- ![React](https://img.shields.io/badge/React-%2320232a?style=flat&logo=react&logoColor=%2361DAFB)
+- ![React Router](https://img.shields.io/badge/React_Router-%23CA4245?style=flat&logo=react-router&logoColor=white)
+- ![Axios](https://img.shields.io/badge/Axios-%235A29E4?style=flat&logo=axios&logoColor=white)
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-%2338B2AC?style=flat&logo=tailwind-css&logoColor=white)
+- ![shadcn](https://img.shields.io/badge/shadcn-%23000000?style=flat&logo=shadcn&logoColor=white)
