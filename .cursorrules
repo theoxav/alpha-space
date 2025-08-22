@@ -1,0 +1,20 @@
+{
+  "commitMessage": {
+    "language": "en",
+    "style": "conventional",
+    "rules": {
+      "format": "type(scope): short description",
+      "descriptionCase": "imperative",
+      "maxDescriptionLength": 72,
+      "bodyRequiredFor": ["feat", "fix"],
+      "footerRequiredFor": ["breaking-change"]
+    },
+    "examples": [
+      "feat(auth): add JWT authentication",
+      "fix(api): handle null pointer on user creation",
+      "docs(readme): update installation instructions",
+      "refactor(core): simplify error handling logic",
+      "test(user): add unit tests for login flow"
+    ]
+  }
+}
