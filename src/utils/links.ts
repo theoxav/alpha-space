@@ -14,7 +14,7 @@ const links: Link[] = [
   },
   {
     ref: '/webb',
-    label: 'jams webb',
+    label: 'james webb',
   },
   {
     ref: '/hubble',
