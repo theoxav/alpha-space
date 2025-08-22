@@ -1,9 +1,12 @@
 import { useLoaderData } from 'react-router-dom';
 import type { NewsResponse } from '@/utils/types';
 import CardsGrid from '@/components/ui/cards-grid/CardsGrid';
+import Title from '@/components/ui/title/Title';
+import Overview from '@/components/ui/overview/Overview';
 
 const News = () => {
-  const { results } = useLoaderData() as NewsResponse;
+  const data = useLoaderData() as NewsResponse;
+  const { results } = data;
 
   if (!results) {
     return <div>Aucune actualité disponible</div>;
@@ -11,6 +14,8 @@ const News = () => {
 
   return (
     <section className="section">
+      <Title text="All News" />
+      <Overview results={data} />
       <CardsGrid results={results} mode="news-page" />
     </section>
   );
