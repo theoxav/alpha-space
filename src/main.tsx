@@ -3,6 +3,7 @@ import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HomeLayout, Landing, News, Webb, SpaceX, Apod, Hubble } from './pages';
 import { newsPageLoader } from './pages/news/News.loader';
+import { ErrorElement } from './components';
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,12 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     children: [
       { index: true, element: <Landing /> },
-      { path: 'news', element: <News />, loader: newsPageLoader },
+      {
+        path: 'news',
+        element: <News />,
+        loader: newsPageLoader,
+        errorElement: <ErrorElement />,
+      },
       { path: 'webb', element: <Webb /> },
       { path: 'spacex', element: <SpaceX /> },
       { path: 'apod', element: <Apod /> },
