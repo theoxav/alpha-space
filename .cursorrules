@@ -1,20 +1,28 @@
 {
   "commitMessage": {
-    "language": "en",
     "style": "conventional",
     "rules": {
-      "format": "type(scope): short description",
+      "format": "type(scope): short description in English",
       "descriptionCase": "imperative",
       "maxDescriptionLength": 72,
-      "bodyRequiredFor": ["feat", "fix"],
-      "footerRequiredFor": ["breaking-change"]
+      "bodyWrapLength": 100,
+      "requireScope": true,
+      "bodyRequiredFor": [
+        "feat",
+        "fix"
+      ],
+      "footerRequiredFor": [
+        "breaking-change"
+      ]
     },
+    "instructions": "Always write commit messages in English, never in French. Use the imperative mood (e.g., 'add', 'fix', 'update', 'remove'). The subject must be short and concise. Provide a meaningful body when required. Follow the Conventional Commits standard strictly.",
     "examples": [
-      "feat(auth): add JWT authentication",
-      "fix(api): handle null pointer on user creation",
-      "docs(readme): update installation instructions",
+      "feat(ui): add dark mode toggle to settings page",
+      "fix(api): handle null user profile response gracefully",
+      "chore(ci): update GitHub Actions workflow for testing",
+      "docs(readme): improve setup instructions for local dev",
       "refactor(core): simplify error handling logic",
-      "test(user): add unit tests for login flow"
+      "test(auth): add unit tests for JWT validation"
     ]
   }
 }
