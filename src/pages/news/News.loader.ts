@@ -1,6 +1,10 @@
 import { snapiCustomFetch } from "@/utils/customFetch";
-import type { NewsResponse } from "@/utils/types";
-import type { LoaderFunction } from "react-router-dom";
+import type {
+  FiltersParamS,
+  NewsResponse,
+  NewsResponseWithParams,
+} from '@/utils/types';
+import type { LoaderFunction } from 'react-router-dom';
 
 const newsParams = {
   news_site_exclude: 'SpacePolicyOnline.com',
@@ -8,19 +12,24 @@ const newsParams = {
   order: 'published_at',
 };
 
-export const newsPageLoader: LoaderFunction =
-  async (): Promise<NewsResponse | null> => {
-    try {
-      const formattedParams = {
-        ...newsParams,
-      };
-      const response = await snapiCustomFetch.get<NewsResponse>('', {
-        params: formattedParams,
-      });
+export const newsPageLoader: LoaderFunction = async ({
+  request,
+}): Promise<NewsResponseWithParams | null> => {
+  try {
+    const params: FiltersParamS = Object.fromEntries([
+      ...new URL(request.url).searchParams.entries(),
+    ]);
+    const formattedParams = {
+      search: params.term ? params.term : '',
+      ...newsParams,
+    };
+    const response = await snapiCustomFetch.get<NewsResponse>('', {
+      params: formattedParams,
+    });
 
-      return response.data;
-    } catch (error) {
-      console.error(error);
-      return null;
-    }
-  };
+    return { response: response.data, params };
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};

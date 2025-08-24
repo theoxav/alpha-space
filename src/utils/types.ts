@@ -18,3 +18,13 @@ export type NewsResponse = {
   previous: string | null;
   results: News[];
 };
+
+export type NewsResponseWithParams = {
+  response: NewsResponse;
+  params: FiltersParamS;
+};
+
+export type FiltersParamS = {
+  term?: string;
+  mode?: string;
+};

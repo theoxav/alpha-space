@@ -1,22 +1,24 @@
 import { useLoaderData } from 'react-router-dom';
-import type { NewsResponse } from '@/utils/types';
+import type { NewsResponseWithParams } from '@/utils/types';
 import CardsGrid from '@/components/ui/cards-grid/CardsGrid';
 import Title from '@/components/ui/title/Title';
 import Overview from '@/components/ui/overview/Overview';
+import { Filters } from '@/components';
 
 const News = () => {
-  const data = useLoaderData() as NewsResponse;
-  const { results } = data;
+  const data = useLoaderData() as NewsResponseWithParams;
+  const { response, params } = data;
 
-  if (!results) {
+  if (!response.results) {
     return <div>Aucune actualité disponible</div>;
   }
 
   return (
-    <section className="section">
+    <section className="section align-element px-8">
       <Title text="All News" />
+      <Filters term={params.term} mode="news" key={params.term} />
       <Overview results={data} />
-      <CardsGrid results={results} mode="news-page" />
+      <CardsGrid objects={response} mode="news-page" />
     </section>
   );
 };

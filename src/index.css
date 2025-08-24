@@ -146,6 +146,6 @@ body {
     @apply max-w-6xl mx-auto px-8;
   }
   .section {
-    @apply min-h-[100vh] align-element px-0 pr-12;
+    @apply min-h-[100vh] px-0 pr-12;
   }
 }

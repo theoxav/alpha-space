@@ -1,15 +1,18 @@
 import NewsCardItem from '@/components/features/news/NewsCardItem';
-import type { News } from '@/utils/types';
+import type { NewsResponse } from '@/utils/types';
 import type { ReactNode } from 'react';
 
 const CardsGrid = ({
-  results,
+  objects,
+  mode,
 }: {
-  results: News[];
+  objects: NewsResponse;
+  mode: string;
 }): ReactNode => {
+  console.log(mode);
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-      {results.map((item, index) => (
+      {objects.results.map((item, index) => (
         <NewsCardItem key={index} item={item} />
       ))}
     </div>
